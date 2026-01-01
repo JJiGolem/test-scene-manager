@@ -1,0 +1,3 @@
+[submodule "ragemp-types"]
+	path = ragemp-types
+	url = https://github.com/JJiGolem/ragemp-types.git
