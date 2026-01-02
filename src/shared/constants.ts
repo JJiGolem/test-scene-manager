@@ -1,3 +1,0 @@
-export const SHARED_CONSTANTS = {
-	HELLO_WORLD: 'HELLO WORLD!'
-};
