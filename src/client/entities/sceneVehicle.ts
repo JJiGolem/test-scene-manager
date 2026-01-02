@@ -14,7 +14,7 @@ export class SceneVehicle extends SceneEntity<VehicleMp, ISceneVehicleOptions> {
       {
         heading: this.options.heading,
         alpha: this.options.alpha,
-        dimension: this.options.dimension,
+        dimension: this.options.dimension ?? mp.players.local.dimension,
         engine: this.options.engine,
         locked: this.options.locked,
         numberPlate: this.options.numberPlate,

@@ -15,7 +15,7 @@ export class ScenePed extends SceneEntity<PedMp, IScenePedOptions> {
     this._entity = mp.peds.new(pedModel,
       this.options.position,
       this.options.heading,
-      this.options.dimension
+      this.options.dimension ?? mp.players.local.dimension
     );
   }
 

@@ -17,7 +17,7 @@ export class SceneBlip extends SceneEntity<BlipMp, ISceneBlipOptions> {
         scale: this.options.scale,
         color: this.options.color,
         alpha: this.options.alpha,
-        dimension: this.options.dimension,
+        dimension: this.options.dimension ?? mp.players.local.dimension,
         drawDistance: this.options.drawDistance,
         shortRange: this.options.shortRange
       }

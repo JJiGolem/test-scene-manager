@@ -8,15 +8,14 @@ export const enum SceneEntityType {
   Blip = 'blip'
 }
 
-export interface ISceneEntity<T> {
+export interface ISceneEntity {
   uid: NumberUID
   get type(): SceneEntityType
-  get entity(): null | T
   create(): void
   destroy(): void
 }
 
-export abstract class SceneEntity<TEntity, TOptions extends ISceneEntityOptions> implements ISceneEntity<TEntity> {
+export abstract class SceneEntity<TEntity, TOptions extends ISceneEntityOptions> implements ISceneEntity {
   public readonly uid: NumberUID
   protected readonly options: TOptions
   protected _entity: null | TEntity = null;
