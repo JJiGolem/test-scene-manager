@@ -51,7 +51,7 @@ class PrivateDimensionService {
 
 const privateDimension = new PrivateDimensionService();
 
-mp.events.add('playerQuit', privateDimension.onPlayerDisconnected)
+mp.events.add('playerQuit', (player: PlayerMp) => privateDimension.onPlayerDisconnected(player))
 
 mp.events.addProc(ServerProc.Dimension.RequestReturnInZeroDimension, (player: PlayerMp) => {
   console.log('request return zero dimension');

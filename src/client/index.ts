@@ -88,6 +88,10 @@ mp.events.add('playerReady', async () => {
 
       mp.events.add("render", render)
     }
+
+    testDriveScene.addDestroyHandler(() => {
+      mp.players.local.setCoordsNoOffset(-8.60, 8.13, 72, false, false, false);
+    })
   }
 
   {

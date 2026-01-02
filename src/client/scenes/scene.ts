@@ -26,6 +26,7 @@ export class Scene {
   public readonly name: string;
   private readonly entityPool: SceneEntityPool;
   private mountHandler?: () => void;
+  private destroyHandlers: Array<() => void> = [];
 
   constructor(name: string) {
     this.name = name;
@@ -34,6 +35,10 @@ export class Scene {
 
   public set onMount(handler: () => void) {
     this.mountHandler = handler;
+  }
+
+  public addDestroyHandler(handler: () => void): void {
+    this.destroyHandlers.push(handler);
   }
 
   public get peds(): Map<NumberUID, ScenePed> {
@@ -68,6 +73,10 @@ export class Scene {
   public destroy() {
     for (const entity of this.entityPool.getAllEntity()) {
       entity.destroy();
+    }
+
+    for (const handler of this.destroyHandlers) {
+      handler();
     }
   }
 
